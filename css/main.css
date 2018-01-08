@@ -2006,7 +2006,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #4b674f;
+  background: #4be54f;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2767,6 +2767,13 @@ pre .javascript .function {
 }
 .page-post-detail .comments {
   overflow: hidden;
+}
+.post-box-shadow {
+  -webkit-box-shadow: 0 0 14px #cacbcb;
+  -moz-box-shadow: 0 0 14px #cacbcc;
+  background: #fff;
+  padding: 25px;
+  margin-bottom: 100px;
 }
 @media (max-width: 767px) {
   .header-inner,
