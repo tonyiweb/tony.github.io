@@ -1004,7 +1004,7 @@ pre .javascript .function {
   display: inline-block;
   padding: 0 20px;
   font-size: 14px;
-  color: #fff;
+  color: #6ac7f8;
   background: #fff;
   border: 2px solid #6ac7f8;
   text-decoration: none;
@@ -1017,7 +1017,7 @@ pre .javascript .function {
 }
 .btn:hover {
   border-color: #6ac7f8;
-  color: #6ac7f8;
+  color: #fff;
   background: #6ac7f8;
 }
 .btn +.btn {
@@ -2013,7 +2013,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #e53440;
+  background: #8a44c4;
 }
 .links-of-blogroll {
   font-size: 13px;
