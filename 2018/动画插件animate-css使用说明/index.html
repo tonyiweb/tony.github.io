@@ -88,7 +88,7 @@
 <meta property="og:description" content="animate.cssGithub地址: https://github.com/daneden/animate.css体验地址：https://daneden.github.io/animate.css/ 安装: Bower: $ bower install animate.css –save   npm: $ npm install animate.css –save    使用： 基本用法&amp;">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://image.superwr.top/common/image/animate_css.png">
-<meta property="og:updated_time" content="2018-02-27T10:39:44.757Z">
+<meta property="og:updated_time" content="2018-02-27T10:43:22.324Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="动画插件animate.css使用说明">
 <meta name="twitter:description" content="animate.cssGithub地址: https://github.com/daneden/animate.css体验地址：https://daneden.github.io/animate.css/ 安装: Bower: $ bower install animate.css –save   npm: $ npm install animate.css –save    使用： 基本用法&amp;">
@@ -322,7 +322,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-02-27T18:39:44+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2018-02-27T18:43:22+08:00">
                 2018-02-27
               </time>
             
@@ -394,7 +394,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  477
+                  479
                 </span>
               
 
@@ -508,18 +508,13 @@
     return this;
   },
 });
-</code></pre><p>使用：</p>
-</li>
-</ol>
-<ul>
-<li>仅仅执行动画，不执行其它操作<pre><code>$(&apos;#yourElement&apos;).animateCss(&apos;bounce&apos;);
-</code></pre></li>
-<li>先执行动画，完成之后，执行其它操作<pre><code>$(&apos;#yourElement&apos;).animateCss(&apos;bounce&apos;, function() {
+</code></pre><p>使用：<br>(1)仅仅执行动画，不执行其它操作</p>
+<pre><code>$(&apos;#yourElement&apos;).animateCss(&apos;bounce&apos;);
+</code></pre><p>(2)先执行动画，完成之后，执行其它操作</p>
+<pre><code>$(&apos;#yourElement&apos;).animateCss(&apos;bounce&apos;, function() {
  // Do somthing after animation
 });
 </code></pre></li>
-</ul>
-<ol>
 <li><p>可以通过添加css样式来控制动画的时长，延迟时间和执行次数(indinite为无限多次)</p>
 <pre><code>#yourElement {
   -vendor-animation-duration: 3s;
