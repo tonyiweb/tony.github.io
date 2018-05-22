@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="紫陌垂杨的小站">
 <meta property="og:description" content="去年的建军节，一个展示军装照的H5人脸融合游戏火遍朋友圈，带来很好的传播效果。最近欧冠决赛要来了，公司决定做一个寻找和你最像的欧冠球星的H5游戏，那么该怎么做呢？认真分析了一下，这个游戏其实用到的技术还是挺多的，是一个比较综合的项目。主要用到技术如下： 人脸识别Python web和Java web域名解析和nginx微信JSH5页面人脸识别人脸识别的API各大平台都有提供，百度，阿里，优图(">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-21T10:23:31.465Z">
+<meta property="og:updated_time" content="2018-05-22T03:03:16.647Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="从零开始制作H5人脸融合小游戏">
 <meta name="twitter:description" content="去年的建军节，一个展示军装照的H5人脸融合游戏火遍朋友圈，带来很好的传播效果。最近欧冠决赛要来了，公司决定做一个寻找和你最像的欧冠球星的H5游戏，那么该怎么做呢？认真分析了一下，这个游戏其实用到的技术还是挺多的，是一个比较综合的项目。主要用到技术如下： 人脸识别Python web和Java web域名解析和nginx微信JSH5页面人脸识别人脸识别的API各大平台都有提供，百度，阿里，优图(">
@@ -320,8 +320,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-05-21T18:23:31+08:00">
-                2018-05-21
+              <time title="更新于" itemprop="dateModified" datetime="2018-05-22T11:03:16+08:00">
+                2018-05-22
               </time>
             
           </span>
@@ -392,7 +392,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  2,030
+                  2,099
                 </span>
               
 
@@ -408,7 +408,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  8
+                  9
                 </span>
               
             </div>
@@ -441,11 +441,11 @@
 <p>3,上传图片并获得人脸融合结果<br>(1)前台<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div></pre></td><td class="code"><pre><div class="line">if(serverId!=&apos;0&apos;)&#123;</div><div class="line">		if(gender==1)&#123;</div><div class="line">			showAlert(&quot;正在玩命给小主儿寻找最像你的球星...&quot;,&quot;loading&quot;);</div><div class="line">		&#125;else&#123;</div><div class="line">			showAlert(&quot;正在玩命给小主儿寻找最像你的球星太太...&quot;,&quot;loading&quot;);</div><div class="line">		&#125;</div><div class="line">		//在服务器端下载图片，并作人脸融合，返回融合后的结果给img的src</div><div class="line">		$.get(baseUrl+&quot;/common/download_image&quot;,&#123;serverId:serverId,gender:gender&#125;,</div><div class="line">			function(data)&#123;</div><div class="line">			if(data.status==&apos;success&apos;)&#123;</div><div class="line">				hideAlert();</div><div class="line">				$(&quot;#loadingPage&quot;).css(&quot;display&quot;,&quot;none&quot;);</div><div class="line">				$(&quot;#firstPage&quot;).css(&quot;display&quot;,&quot;none&quot;);</div><div class="line">				$(&quot;#secondPage&quot;).css(&quot;display&quot;,&quot;none&quot;);</div><div class="line">				$(&quot;#thirdPage&quot;).css(&quot;display&quot;,&quot;block&quot;);</div><div class="line">				var imageData = JSON.parse(data.data);</div><div class="line">				$(&quot;#resultName&quot;).html(imageData.modelShortName);</div><div class="line">				if(gender==1)&#123;</div><div class="line">					$(&quot;#discriptionText&quot;).html(imageData.description+&apos;，要被你迷倒啦(^_-&apos;);</div><div class="line">					setShareInfo(imageData.imageUrl[2],&apos;和我最像的欧冠球星是&apos;+imageData.modelShortName+&apos;，&apos;+imageData.description)</div><div class="line">				&#125;else&#123;</div><div class="line">					$(&quot;#discriptionText&quot;).html(imageData.modelName+&apos;，&apos;+imageData.description+&apos;，要被你迷倒啦(^_-&apos;);</div><div class="line">					setShareInfo(imageData.imageUrl[2],&apos;和我最像的欧冠女神是&apos;+imageData.modelShortName+&apos;，&apos;+imageData.description)</div><div class="line">				&#125;</div><div class="line"></div><div class="line">				$(&apos;#firstResultImg&apos;).animateCss(&apos;fadeIn&apos;, function() &#123;</div><div class="line">					$(&quot;#firstResultImg&quot;).attr(&quot;src&quot;,imageData.imageUrl[0]);</div><div class="line">					$(&quot;#firstResultImg&quot;).addClass(&apos;animated flash&apos;);</div><div class="line">					$(&quot;#secondResultImg&quot;).animateCss(&apos;fadeIn&apos;,function()&#123;</div><div class="line">						$(&quot;#secondResultImg&quot;).attr(&quot;src&quot;,imageData.imageUrl[1]);</div><div class="line">						$(&quot;#secondResultImg&quot;).addClass(&apos;animated flash&apos;);</div><div class="line">						$(&quot;#thirdResultImg&quot;).animateCss(&apos;fadeIn&apos;,function()&#123;</div><div class="line">							$(&quot;#thirdResultImg&quot;).attr(&quot;src&quot;,imageData.imageUrl[2]);</div><div class="line">							$(&quot;#thirdResultImg&quot;).addClass(&apos;animated flash&apos;);</div><div class="line">							$(&quot;#fourthResultImg&quot;).animateCss(&apos;fadeIn&apos;,function()&#123;</div><div class="line">								$(&quot;#fourthResultImg&quot;).attr(&quot;src&quot;,imageData.imageUrl[3]);</div><div class="line">								$(&quot;#fourthResultImg&quot;).addClass(&apos;animated flash&apos;);</div><div class="line">								$(&quot;#resultName&quot;).addClass(&apos;animated bounceIn&apos;);</div><div class="line">							&#125;);</div><div class="line">						&#125;);</div><div class="line">					&#125;);</div><div class="line">				&#125;);</div><div class="line">			&#125;else&#123;</div><div class="line">				if(gender==1)&#123;</div><div class="line">					showAlert(&quot;好遗憾，没有找到和你相像的球星呢...换张照片，再玩一次吧&quot;,&quot;fail&quot;);</div><div class="line">				&#125;else&#123;</div><div class="line">					showAlert(&quot;好遗憾，没有找到和你相像的球星太太呢...换张照片，再玩一次吧&quot;,&quot;fail&quot;);</div><div class="line">				&#125;</div><div class="line">			&#125;</div><div class="line">		&#125;)</div><div class="line">	&#125;else&#123;</div><div class="line">		showAlert(&quot;好遗憾，你还没有上传任何照片哦...&quot;,&quot;fail&quot;);</div><div class="line">	&#125;</div></pre></td></tr></table></figure></p>
 <p>（2）后台<br>![Alt text][<a href="https://ltian-2017.oss-cn-shenzhen.aliyuncs.com/blog/merge_image.png" target="_blank" rel="external">https://ltian-2017.oss-cn-shenzhen.aliyuncs.com/blog/merge_image.png</a> ‘上传照片并进行人脸融合’]</p>
 <blockquote>
-<p>注意：需要在真机上才可以调用相机和相册</p>
+<p>注意：需要在真机上才可以调用相机和相册<br>注意：要使用的域名必须在公众号设置——&gt;功能设置中添加</p>
 </blockquote>
 <h1 id="H5页面-1"><a href="#H5页面-1" class="headerlink" title="H5页面"></a>H5页面</h1><p>页面的大半是要依赖UI设计师，下面放些设计图<br>![Alt text][<a href="https://ltian-2017.oss-cn-shenzhen.aliyuncs.com/blog/design1.png" target="_blank" rel="external">https://ltian-2017.oss-cn-shenzhen.aliyuncs.com/blog/design1.png</a> ‘启动页’]<br>![Alt text][<a href="https://ltian-2017.oss-cn-shenzhen.aliyuncs.com/blog/design2.png" target="_blank" rel="external">https://ltian-2017.oss-cn-shenzhen.aliyuncs.com/blog/design2.png</a> ‘性别选择页’]<br>![Alt text][<a href="https://ltian-2017.oss-cn-shenzhen.aliyuncs.com/blog/design3.png" target="_blank" rel="external">https://ltian-2017.oss-cn-shenzhen.aliyuncs.com/blog/design3.png</a> ‘上传照片页’]<br>![Alt text][<a href="https://ltian-2017.oss-cn-shenzhen.aliyuncs.com/blog/design4.png" target="_blank" rel="external">https://ltian-2017.oss-cn-shenzhen.aliyuncs.com/blog/design4.png</a> ‘结果页’]</p>
 <blockquote>
-<p>注意1:H5页面的难点其实是在于兼容，这里通过计算设备宽度，得到相对尺寸rem，然后给元素设置以rem为单位的位置尺寸等信息,做到全部兼容ios移动设备和大部分Android设备<br>注意2:待续</p>
+<p>注意1:H5页面的难点其实是在于兼容，这里通过计算设备宽度，得到相对尺寸rem，然后给元素设置以rem为单位的位置尺寸等信息,做到全部兼容ios移动设备和大部分Android设备<br>注意2:页面中使用到了Animate.css这个CSS动画框架，链接:<a href="http://blog.superwr.top/2018/%E5%8A%A8%E7%94%BB%E6%8F%92%E4%BB%B6animate-css%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/#more">http://blog.superwr.top/2018/%E5%8A%A8%E7%94%BB%E6%8F%92%E4%BB%B6animate-css%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/#more</a></p>
 </blockquote>
 
       
