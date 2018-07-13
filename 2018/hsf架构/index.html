@@ -87,16 +87,16 @@
 <meta property="og:site_name" content="紫陌垂杨的小站">
 <meta property="og:description" content="阿里巴巴集团内部使用的分布式服务框架 HSF（High Speed Framework，也有人戏称“好舒服”）已经被很多技术爱好者所熟知，目前已经支撑着近 2000 多个应用的运行。 其对应早期的开源项目 Dubbo（因为某些原因，Dubbo 项目在 2012 年年底，阿里巴巴就停止了对此开源项目的更新），则更是在互联网领域有着非常高的知名度和广泛的使用。 本文通过对阿里巴巴 HSF 服务框架的介">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://ltian-2017.oss-cn-shenzhen.aliyuncs.com/blog/hsf1.jpg,">
-<meta property="og:image" content="https://ltian-2017.oss-cn-shenzhen.aliyuncs.com/blog/hsf2.jpg,">
-<meta property="og:image" content="https://ltian-2017.oss-cn-shenzhen.aliyuncs.com/blog/hsf3.jpg,">
-<meta property="og:image" content="https://ltian-2017.oss-cn-shenzhen.aliyuncs.com/blog/hsf4.jpg,">
-<meta property="og:image" content="https://ltian-2017.oss-cn-shenzhen.aliyuncs.com/blog/hsf5.jpg,">
-<meta property="og:updated_time" content="2018-07-13T06:16:18.661Z">
+<meta property="og:image" content="https://ltian-2017.oss-cn-shenzhen.aliyuncs.com/blog/hsf1.jpg">
+<meta property="og:image" content="https://ltian-2017.oss-cn-shenzhen.aliyuncs.com/blog/hsf2.jpg">
+<meta property="og:image" content="https://ltian-2017.oss-cn-shenzhen.aliyuncs.com/blog/hsf3.jpg">
+<meta property="og:image" content="https://ltian-2017.oss-cn-shenzhen.aliyuncs.com/blog/hsf4.jpg">
+<meta property="og:image" content="https://ltian-2017.oss-cn-shenzhen.aliyuncs.com/blog/hsf5.jpg">
+<meta property="og:updated_time" content="2018-07-13T06:26:47.010Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="分布式服务框架选型：面对Dubbo，阿里巴巴为什么选择了HSF？">
 <meta name="twitter:description" content="阿里巴巴集团内部使用的分布式服务框架 HSF（High Speed Framework，也有人戏称“好舒服”）已经被很多技术爱好者所熟知，目前已经支撑着近 2000 多个应用的运行。 其对应早期的开源项目 Dubbo（因为某些原因，Dubbo 项目在 2012 年年底，阿里巴巴就停止了对此开源项目的更新），则更是在互联网领域有着非常高的知名度和广泛的使用。 本文通过对阿里巴巴 HSF 服务框架的介">
-<meta name="twitter:image" content="https://ltian-2017.oss-cn-shenzhen.aliyuncs.com/blog/hsf1.jpg,">
+<meta name="twitter:image" content="https://ltian-2017.oss-cn-shenzhen.aliyuncs.com/blog/hsf1.jpg">
 
 
 
@@ -326,7 +326,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-07-13T14:16:18+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2018-07-13T14:26:47+08:00">
                 2018-07-13
               </time>
             
@@ -453,7 +453,7 @@
 <p>按照不同的服务器权重设置服务调用者对多个服务提供者服务节点的访问；</p>
 <p>设置某些服务的 QPS 能力上限值，一旦该服务的 QPS 达到该阀值，则拒绝服务的继续调用，这也是实现服务限流的技术实现，在平台进行大促或秒杀场景时，保障平台的稳定的重要屏障。</p>
 <p>通过这样规则的设置，Diamond 除了将这些规则保存在自身的数据库中外，会自动将这些规则推送到相关的服务节点上（实际实现上是服务节点会定时从 Diamond 服务器上同步相关配置信息），使这些规则能立即在服务运行环境中生效。</p>
-<p>如图 3-5 所示是阿里巴巴 HSF 服务框架的工作原理，按照服务注册发布、服务订阅、服务规则推送、最终服务提供者和服务调用者间的服务交互的顺序说明了 HSF 服务框架中每个组件在整个框架中所扮演的角色。<br><img src="https://ltian-2017.oss-cn-shenzhen.aliyuncs.com/blog/hsf1.jpg," alt="Alt Text" title="HSF服务框架工作原理示意图"><br>图 3-5 HSF 服务框架工作原理示意图</p>
+<p>如图 3-5 所示是阿里巴巴 HSF 服务框架的工作原理，按照服务注册发布、服务订阅、服务规则推送、最终服务提供者和服务调用者间的服务交互的顺序说明了 HSF 服务框架中每个组件在整个框架中所扮演的角色。<br><img src="https://ltian-2017.oss-cn-shenzhen.aliyuncs.com/blog/hsf1.jpg" alt="Alt Text" title="HSF服务框架工作原理示意图"><br>图 3-5 HSF 服务框架工作原理示意图</p>
 <h4 id="1）服务节点对配置服务器列表的获取。"><a href="#1）服务节点对配置服务器列表的获取。" class="headerlink" title="1）服务节点对配置服务器列表的获取。"></a>1）服务节点对配置服务器列表的获取。</h4><p>服务调用者和服务提供者在随着 Tomcat 容器启动后，会以域名（比如“xxx.tbsite.net”）的方式获取到可用的地址服务器，通过向地址服务器分别发送获取配置服务器和 Diamond 服务器服务 IP 列表请求的方式，在容器启动完成后，就已经在该服务节点上获取到了配置服务器和 Diamond 服务器的 IP 列表信息。整个过程如图 3-5 中的步骤①②。</p>
 <h4 id="2）服务的注册发布。"><a href="#2）服务的注册发布。" class="headerlink" title="2）服务的注册发布。"></a>2）服务的注册发布。</h4><p>作为服务提供者，当获取到配置服务器的服务器列表后，则向配置服务器发送当前应用中包含的服务提供者相关信息（这些信息均是从应用的配置文件中获取到，比如服务的接口类全名、服务版本、所属服务组等信息），联同当前服务器的 IP 地址、服务端口等信息进行服务注册发布，如图 3-5 中的步骤③。这个步骤在每一个有服务提供的应用启动时都会自动执行，比如现在有 5 个提供同一服务的应用启动后，此时在配置服务器上就已经保存了提供这一服务的 5 个服务器相关信息。</p>
 <h4 id="3）服务的订阅。"><a href="#3）服务的订阅。" class="headerlink" title="3）服务的订阅。"></a>3）服务的订阅。</h4><p>当作为服务调用者的应用启动时，同样在完成配置服务器列表的获取后，就进行与配置服务器的交互，发送服务消费者相关信息（同样包含了服务的接口全名，服务版本、所属服务组）到配置服务器进行服务的订阅，此时在配置服务器上会通过服务接口全名+服务版本作为匹配条件在当前配置服务器的内存中进行搜索，一旦获取到对应的服务注册信息，则将对应的服务提供者的服务器组 IP 地址及端口返回给服务调用者所在的应用节点上，此时也就完成了服务调用者端对于它所需要调用的服务提供者服务器列表信息，用于在服务真正交互时使用。服务订阅过程如图 3-5 中的步骤④⑤。</p>
@@ -468,12 +468,12 @@
 <h3 id="2、HSF-框架的容错机制"><a href="#2、HSF-框架的容错机制" class="headerlink" title="2、HSF 框架的容错机制"></a>2、HSF 框架的容错机制</h3><p>因为要保证服务的高可用性，所以在生产环境部署中一定会有 <strong>多个应用实例作为服务提供者提供某一相同服务</strong>。</p>
 <p>基于之前所提到的服务框架的运行原理的说明，在进行服务调用时，服务调用者端已经保存了它所需要调用的服务提供者的服务器列表信息（如图 3-6 中为例，则保存了三台服务提供者所在服务器的列表）。</p>
 <p>当采用随机方式获取其中一台进行服务交互时（如图 3-6 步骤①），不管是第一台服务器已经某种故障造成了服务请求无法响应，还是该服务器已经接收了服务请求，在进行服务请求处理过程中出现了服务器故障（比如宕机、网络问题），造成该服务器没有在规定的时间（一般服务调用会设置到期时间）返回服务处理的结果，服务调用者端则会获取到服务调用失败的反馈（如图 3-6 步骤②）。</p>
-<p>在 HSF 服务调用的代码中会立即从剩下的服务提供者服务器列表中选择另外一个服务器再次进行服务请求（如图 3-6 步骤③），这一次这个服务提供者实例正常提供了此次服务的请求（如图 3-6 步骤④），从而保证了在个别服务提供者出现故障时，完全不会影响该服务正常提供服务。<br><img src="https://ltian-2017.oss-cn-shenzhen.aliyuncs.com/blog/hsf2.jpg," alt="Alt Text" title="HSF服务框架实现服务高可用性原理示意图"><br>图 3-6 HSF 服务框架实现服务高可用性原理示意图</p>
+<p>在 HSF 服务调用的代码中会立即从剩下的服务提供者服务器列表中选择另外一个服务器再次进行服务请求（如图 3-6 步骤③），这一次这个服务提供者实例正常提供了此次服务的请求（如图 3-6 步骤④），从而保证了在个别服务提供者出现故障时，完全不会影响该服务正常提供服务。<br><img src="https://ltian-2017.oss-cn-shenzhen.aliyuncs.com/blog/hsf2.jpg" alt="Alt Text" title="HSF服务框架实现服务高可用性原理示意图"><br>图 3-6 HSF 服务框架实现服务高可用性原理示意图</p>
 <p>同时，因为配置服务器是采用长连接的方式与服务节点进行网络通讯，一旦发现有服务提供者实例出现故障，配置服务器在秒级就会感知到（如图 3-6 步骤⑤），此时会将出问题这台服务提供者的信息从该服务的服务器列表中删除，并将更新后的服务器列表采用推送的方式同步给与该服务相关的所有服务调用者端（如图 3-6 步骤⑥），这样当下次服务调用者再进行此服务的调用时，就不会因为随机的方式再次对已经停止服务提供的服务器发起服务的调用。</p>
 <h3 id="3、HSF-框架的线性扩展支持"><a href="#3、HSF-框架的线性扩展支持" class="headerlink" title="3、HSF 框架的线性扩展支持"></a>3、HSF 框架的线性扩展支持</h3><p>作为 HSF 框架设计之初，<strong>最为重要的一个特性就是服务能力的可扩展性</strong>。也就是真正的做到某个服务的业务处理能力能随着服务器资源的增加得到线性的增长。</p>
 <p>其实在传统架构中一直也会强调平台的扩展能力，但均会程度不一的出现服务节点数量到达一定量后，出现阻碍平台服务能力扩展的问题，有的是出现网络传输的瓶颈、也有服务节点接入数量上的限制，前文所描述的 ESB 架构带来的“雪崩”效应也均是这类架构给服务能力的扩展带来影响的原因所在。</p>
-<p>如图 3-7 中所描述的场景，当服务面对较大的服务调用压力或将要面临如天猫双11大促、秒杀等活动前，已有的服务提供者各服务器水位（CPU、内存、IO等）处于比较高的情况或现有服务能力满足不了业务访问量的要求时，则需要通过增加服务节点数量的方式提升该服务的服务处理能力。<br><img src="https://ltian-2017.oss-cn-shenzhen.aliyuncs.com/blog/hsf3.jpg," alt="Alt Text" title="HSF服务框架对服务能力线性扩展支持1"><br>图 3-7 HSF 服务框架对服务能力线性扩展支持1</p>
-<p>此时，只需要通过增加该服务的服务提供者实例（如图 3-8 所示，增加了一个服务），基于 HSF 框架的运行机制，<strong>新增加的服务提供者实例一旦应用启动完成后，可在几秒内开始进行服务请求的处理</strong>（主要完成服务注册发布、更新后服务列表推送到服务调用者端），从而达到分担其他服务器实例压力的作用，实现服务能力整体水位恢复到正常的状态（如图 3-9）。<br><img src="https://ltian-2017.oss-cn-shenzhen.aliyuncs.com/blog/hsf4.jpg," alt="Alt Text" title="HSF服务框架对服务能力线性扩展支持2"><br>图 3-8 HSF服务框架对服务能力线性扩展支持2<br><img src="https://ltian-2017.oss-cn-shenzhen.aliyuncs.com/blog/hsf5.jpg," alt="Alt Text" title="HSF服务框架对服务能力线性扩展支持3"><br>图 3-9 HSF 服务框架对服务能力线性扩展支持3</p>
+<p>如图 3-7 中所描述的场景，当服务面对较大的服务调用压力或将要面临如天猫双11大促、秒杀等活动前，已有的服务提供者各服务器水位（CPU、内存、IO等）处于比较高的情况或现有服务能力满足不了业务访问量的要求时，则需要通过增加服务节点数量的方式提升该服务的服务处理能力。<br><img src="https://ltian-2017.oss-cn-shenzhen.aliyuncs.com/blog/hsf3.jpg" alt="Alt Text" title="HSF服务框架对服务能力线性扩展支持1"><br>图 3-7 HSF 服务框架对服务能力线性扩展支持1</p>
+<p>此时，只需要通过增加该服务的服务提供者实例（如图 3-8 所示，增加了一个服务），基于 HSF 框架的运行机制，<strong>新增加的服务提供者实例一旦应用启动完成后，可在几秒内开始进行服务请求的处理</strong>（主要完成服务注册发布、更新后服务列表推送到服务调用者端），从而达到分担其他服务器实例压力的作用，实现服务能力整体水位恢复到正常的状态（如图 3-9）。<br><img src="https://ltian-2017.oss-cn-shenzhen.aliyuncs.com/blog/hsf4.jpg" alt="Alt Text" title="HSF服务框架对服务能力线性扩展支持2"><br>图 3-8 HSF服务框架对服务能力线性扩展支持2<br><img src="https://ltian-2017.oss-cn-shenzhen.aliyuncs.com/blog/hsf5.jpg" alt="Alt Text" title="HSF服务框架对服务能力线性扩展支持3"><br>图 3-9 HSF 服务框架对服务能力线性扩展支持3</p>
 <p>正是基于 HSF 框架这一特性，从而真正实现了只要增加服务实例就能实现该服务能力扩展的目标，目前在阿里巴巴共享服务事业部中多个服务中心在天猫双 11 那天各自所部署的服务实例节点数量均超过 2000，即同一个服务由超过 2000 个服务实例同时提供负载均衡的服务。</p>
 <p>本文节选自机械工业出版社《企业IT架构转型之道——阿里巴巴中台战略思想与架构实战》第 3 章。</p>
 
